@@ -14,3 +14,8 @@ Krzysztof 20
 Janusz 40
 Krzysztof 20
 Janusz 40
+Mariusz 19
+Zdzislaw  51
+Wlasyslaw 19
+Marian 10
+Marian 19

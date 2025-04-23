@@ -16,11 +16,7 @@ class Main {
       Student newStudent = new Student(name, age);
       s.addStudent(newStudent);
 
-      var students = s.getStudents();
-      System.out.println("\nLista studentow:");
-      for(Student current : students) {
-        System.out.println(current.ToString());
-      }
+  
     } catch (IOException e) {
       System.out.println("Blad podczas operacji na pliku: " + e.getMessage());
     }
