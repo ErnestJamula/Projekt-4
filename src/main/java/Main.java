@@ -7,17 +7,17 @@ class Main {
       Scanner scanner = new Scanner(System.in);
       int choice;
       do {
-        System.out.println("Wybierz opcję:");
-        System.out.println("1. Wprowadzenie studentów");
-        System.out.println("2. Wyświetlenie listy studentów");
-        System.out.println("3. Zakończ program");
+        System.out.println("Wybierz opcję:\n");
+        System.out.println("1. Wprowadzenie studentów\n");
+        System.out.println("2. Wyświetlenie listy studentów\n");
+        System.out.println("3. Zakończ program\n");
         choice = scanner.nextInt();
-        scanner.nextLine();  
+        scanner.nextLine();  // Consume newline
         switch (choice) {
           case 1:
-            System.out.println("Podaj imie studenta:");
+            System.out.println("Podaj imie studenta:\n");
             String name = scanner.nextLine();
-            System.out.println("Podaj wiek studenta:");
+            System.out.println("Podaj wiek studenta:\n");
             int age = scanner.nextInt();
             Student newStudent = new Student(name, age);
             s.addStudent(newStudent);
@@ -25,21 +25,20 @@ class Main {
             break;
           case 2:
             var students = s.getStudents();
-            System.out.println("\nLista studentów:");
+            System.out.println("\nLista studentów:\n");
             for (Student current : students) {
-              System.out.println(current.ToString());
+              System.out.println(current.ToString() + "\n");
             }
-            System.out.println();
             break;
           case 3:
-            System.out.println("Zamykanie programu...");
+            System.out.println("Zamykanie programu...\n");
             break;
           default:
             System.out.println("Niepoprawny wybór, spróbuj ponownie.\n");
         }
       } while (choice != 3);
     } catch (IOException e) {
-      System.out.println("Błąd podczas operacji na pliku: " + e.getMessage());
+      System.out.println("Błąd podczas operacji na pliku: " + e.getMessage() + "\n");
     }
   }
 }
