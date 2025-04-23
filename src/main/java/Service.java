@@ -34,3 +34,19 @@ public class Service {
     return null;
   }
 }
+public Collection<String> getStudentAges() throws IOException {
+    var ages = new ArrayList<String>();
+    var f = new FileReader("db.txt");
+    var reader = new BufferedReader(f);
+    String line = "";
+    while (true) {
+        line = reader.readLine();
+        if(line == null) break;
+        Student student = Student.Parse(line, new ArrayList<>());
+        if (student != null) {
+            ages.add(String.valueOf(student.GetAge()));
+        }
+    }
+    reader.close();
+    return ages;
+}
